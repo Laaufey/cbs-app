@@ -1,4 +1,5 @@
-import { View, TextInput, StyleSheet, Image, Text } from 'react-native';
+import { View, TextInput, StyleSheet, Image, Text, Pressable } from 'react-native';
+import { TouchableHighlight } from 'react-native-gesture-handler';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Input from '../components/Input';
 import colors from '../config/colors';
@@ -13,12 +14,12 @@ const DiscoverScreen = ({ navigation }) => {
                 placeholderTextColor={colors.medium}
                 icon="search"
                 />
-                
+                <Pressable onPress={() => navigation.navigate('All Events')}>
                 <View style={[styles.card, styles.shadowProp]}>
                 <Image style={styles.image} source={require('../assets/event.png')}/>
                     <Text style={styles.title}>All Events</Text>
                 </View>
-
+                </Pressable>
                 <View style={[styles.card, styles.shadowProp]}>
                 <Image style={styles.image} source={require('../assets/event.png')}/>
                     <Text style={styles.title}>All Organizations</Text>

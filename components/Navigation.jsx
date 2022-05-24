@@ -9,6 +9,7 @@ import DiscoverScreen from "./../screens/DiscoverScreen";
 import SignupScreen from "./../screens/SignupScreen";
 import LoginScreen from "./../screens/LoginScreen";
 import EditScreen from "../screens/EditScreen";
+import AllEventsScreen from "../screens/AllEventsScreen";
 import { NavigationContainer } from '@react-navigation/native';
 import { useSelector } from 'react-redux';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -45,7 +46,7 @@ const NavigationComponent = ({ navigation }) => {
                   })}
                 >
                 <Tab.Screen name="Home" component={HomeStack} />
-                <Tab.Screen name="Discover" component={DiscoverScreen} />
+                <Tab.Screen name="Discover" component={DiscoverStack} />
                 <Tab.Screen name="Chat" component={ChatScreen}/>
                 <Tab.Screen name="Profile" component={ProfileStack} />
             </Tab.Navigator>
@@ -79,4 +80,12 @@ function HomeStack() {
   )
 }
 
+function DiscoverStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Discover Screen" component={DiscoverScreen} options={{headerShown:false}}/>
+      <Stack.Screen name="All Events" component={AllEventsScreen}/>
+    </Stack.Navigator>
+  )
+}
 export default NavigationComponent;
